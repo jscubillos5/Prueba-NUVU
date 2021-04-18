@@ -1,18 +1,20 @@
-package com;
+package com.nuvu;
 
-import com.model.CreditCard;
-import com.model.Person;
-import com.repositories.CreditCardRepository;
-import com.repositories.PersonRepository;
+import com.nuvu.model.CreditCard;
+import com.nuvu.model.Person;
+import com.nuvu.repositories.CreditCardRepository;
+import com.nuvu.repositories.PersonRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SpringBootApplication
+@ComponentScan()
 public class BasicApplication {
 
     public static void main(String[] args) {

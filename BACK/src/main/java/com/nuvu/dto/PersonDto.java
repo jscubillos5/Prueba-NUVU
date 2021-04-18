@@ -1,4 +1,4 @@
-package com.dto;
+package com.nuvu.dto;
 
 /**
  * @author Juan Cubillos

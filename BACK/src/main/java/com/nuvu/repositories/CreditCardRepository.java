@@ -1,6 +1,6 @@
-package com.repositories;
+package com.nuvu.repositories;
 
-import com.model.CreditCard;
+import com.nuvu.model.CreditCard;
 import org.springframework.data.repository.CrudRepository;
 
 /**

@@ -1,9 +1,9 @@
-package com.service;
+package com.nuvu.service;
 
-import com.dao.PersonDao;
-import com.dto.PersonDto;
-import com.model.Person;
-import com.util.LogBack;
+import com.nuvu.dao.PersonDao;
+import com.nuvu.dto.PersonDto;
+import com.nuvu.model.Person;
+import com.nuvu.util.LogBack;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;

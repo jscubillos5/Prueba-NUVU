@@ -1,8 +1,8 @@
-package com.controllers;
+package com.nuvu.controllers;
 
-import com.dto.CreditCardDto;
-import com.model.CreditCard;
-import com.service.CreditCardService;
+import com.nuvu.dto.CreditCardDto;
+import com.nuvu.model.CreditCard;
+import com.nuvu.service.CreditCardService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -18,20 +18,21 @@ import java.util.List;
  */
 
 @RestController
+@RequestMapping(path = "/CreditCard/")
 public class CreditCardController {
 
     @Autowired
     CreditCardService creditCardService;
 
     @ApiOperation(value = "Permite identificar si el controlador de tarjetas de credito esta arriba")
-    @RequestMapping("CreditCard/home")
+    @RequestMapping("home")
     public String home() {
         return "Home Credit Card";
     }
 
     @ApiOperation(value = "Retorna la lista de tarjetas de credito asociadas a una persona")
     @GetMapping(
-            path = "CreditCard/get-credit-cards",
+            path = "get-credit-cards",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody
@@ -41,7 +42,7 @@ public class CreditCardController {
 
     @ApiOperation(value = "Permite registrar una tarjeta de credito en el sistema")
     @PostMapping(
-            path = "CreditCard/add-credit-card",
+            path = "add-credit-card",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody
@@ -51,7 +52,7 @@ public class CreditCardController {
 
     @ApiOperation(value = "Permite eliminar una tarjeta de credito en el sistema")
     @PostMapping(
-            path = "CreditCard/delete-credit-card",
+            path = "delete-credit-card",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody

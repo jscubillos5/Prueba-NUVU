@@ -1,9 +1,9 @@
-package com.service;
+package com.nuvu.service;
 
-import com.dao.CreditCardDao;
-import com.dto.CreditCardDto;
-import com.model.CreditCard;
-import com.util.LogBack;
+import com.nuvu.dao.CreditCardDao;
+import com.nuvu.dto.CreditCardDto;
+import com.nuvu.model.CreditCard;
+import com.nuvu.util.LogBack;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;

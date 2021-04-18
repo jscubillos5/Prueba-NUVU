@@ -1,7 +1,7 @@
-package com;
+package com.nuvu;
 
-import com.controllers.CreditCardController;
-import com.controllers.PersonController;
+import com.nuvu.controllers.CreditCardController;
+import com.nuvu.controllers.PersonController;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

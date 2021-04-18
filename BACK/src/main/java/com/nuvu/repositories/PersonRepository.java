@@ -1,6 +1,6 @@
-package com.repositories;
+package com.nuvu.repositories;
 
-import com.model.Person;
+import com.nuvu.model.Person;
 import org.springframework.data.repository.CrudRepository;
 
 /**

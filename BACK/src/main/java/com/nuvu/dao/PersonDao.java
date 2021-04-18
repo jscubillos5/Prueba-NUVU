@@ -1,7 +1,7 @@
-package com.dao;
+package com.nuvu.dao;
 
-import com.model.Person;
-import com.repositories.PersonRepository;
+import com.nuvu.model.Person;
+import com.nuvu.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
-package com.dao;
+package com.nuvu.dao;
 
-import com.model.CreditCard;
-import com.repositories.CreditCardRepository;
+import com.nuvu.model.CreditCard;
+import com.nuvu.repositories.CreditCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

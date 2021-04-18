@@ -1,8 +1,8 @@
-package com.controllers;
+package com.nuvu.controllers;
 
-import com.dto.PersonDto;
-import com.model.Person;
-import com.service.PersonService;
+import com.nuvu.dto.PersonDto;
+import com.nuvu.model.Person;
+import com.nuvu.service.PersonService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -18,14 +18,14 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping(path = "/back/Person/")
+@RequestMapping(path = "/Person/")
 public class PersonController {
 
     @Autowired
     PersonService personService;
 
     @ApiOperation(value = "Permite identificar si el controlador de personas esta arriba")
-    @RequestMapping("home")
+    @GetMapping("home")
     public String home() {
         return "Home Person";
     }

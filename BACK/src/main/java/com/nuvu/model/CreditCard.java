@@ -1,5 +1,9 @@
-package com.dto;
+package com.nuvu.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -7,13 +11,27 @@ import java.util.Date;
  * @since 2020-04-16
  */
 
-public class CreditCardDto {
+@Entity
+public class CreditCard {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private int number;
     private Date validUntil;
     private int cvc;
     private long idPerson;
+
+    public CreditCard() {
+    }
+
+    public CreditCard(long id, int number, Date validUntil, int cvc, long idPerson) {
+        this.id = id;
+        this.number = number;
+        this.validUntil = validUntil;
+        this.cvc = cvc;
+        this.idPerson = idPerson;
+    }
 
     public long getId() {
         return id;

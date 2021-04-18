@@ -11,31 +11,19 @@ import { PersonService } from 'src/services/Person.service';
 export class PersonComponent implements OnInit {
 
   person: Person;
-  persons: Person[];
 
   constructor(private route: ActivatedRoute,
     private router: Router,
     private personService: PersonService) {
     this.person = new Person();
-    this.persons = [];
   }
 
   ngOnInit(): void {
-    this.personService.getPersons().subscribe(data => {
-      this.persons = data;
-    });
   }
 
   onSubmit() {
-    var lastId = 0;
-    this.personService.getPersons().subscribe(data => {
-      data.forEach(listPersons => {
-        lastId = lastId + 1;
-      });
-    });
-    if (lastId != undefined) {
-      this.person.id = lastId;
-    }
+    const idDefault = 0;
+    this.person.id = idDefault;
     this.personService.addPerson(this.person);
   }
 }
