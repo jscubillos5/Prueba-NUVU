@@ -18,21 +18,21 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping(path = "/back/")
+@RequestMapping(path = "/back/Person/")
 public class PersonController {
 
     @Autowired
     PersonService personService;
 
     @ApiOperation(value = "Permite identificar si el controlador de personas esta arriba")
-    @RequestMapping("Person/home")
+    @RequestMapping("home")
     public String home() {
         return "Home Person";
     }
 
     @ApiOperation(value = "Retorna la lista de personas registradas en el sistema")
     @GetMapping(
-            path = "Person/get-persons",
+            path = "get-persons",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody
@@ -42,7 +42,7 @@ public class PersonController {
 
     @ApiOperation(value = "Permite registrar una persona en el sistema")
     @PostMapping(
-            path = "Person/add-person",
+            path = "add-person",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody
@@ -52,7 +52,7 @@ public class PersonController {
 
     @ApiOperation(value = "Permite eliminar una persona en el sistema")
     @PostMapping(
-            path = "Person/delete-person",
+            path = "delete-person",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public @ResponseBody
