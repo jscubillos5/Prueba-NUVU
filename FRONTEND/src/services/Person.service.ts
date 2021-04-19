@@ -19,6 +19,7 @@ export class PersonService {
     constructor(private http: HttpClient) {
         console.log(HttpHeaders);
         console.log(Observable);
+        console.log(pipe);
         var mainHost = 'http://localhost:';
         var port = '8081';
         var mainURL = '/Person/';

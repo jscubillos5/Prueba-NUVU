@@ -1,0 +1,64 @@
+<div class="card my-5">
+    <div class="card-body">
+        <h2>Add creditCard</h2>
+        <form (ngSubmit)="addCreditCard()" #creditCardForm="ngForm">
+            <div class="form-group">
+                <label for="number">Number</label>&nbsp;
+                <input type="number" min="1" max="9999999999" [(ngModel)]="creditCard.number" class="form-control" id="number" name="number"
+                    placeholder="1111111111" required #number="ngModel">
+                <div [hidden]="!number.pristine" class="alert alert-danger">Number is required</div>
+            </div>
+            <div class="form-group">
+                <label for="name">Valid until</label>&nbsp;
+                <input type="date" [(ngModel)]="creditCard.validUntil" class="form-control" id="validUntil"
+                    name="validUntil" placeholder="Add valid until" required #validUntil="ngModel">
+                <div [hidden]="!validUntil.pristine" class="alert alert-danger">Valid Until is required</div>
+            </div>
+            <div class="form-group">
+                <label for="cvc">CVC</label>&nbsp;
+                <input type="number" min="1" max="999" ng-maxlength="999" [(ngModel)]="creditCard.cvc" class="form-control" id="cvc" name="cvc"
+                    placeholder="111" required #cvc="ngModel">
+                <div [hidden]="!cvc.pristine" class="alert alert-danger">CVC is required</div>
+            </div>
+            <div class="form-group">
+                <label for="person">Person</label>&nbsp;
+                <select [(ngModel)]="creditCard.idPerson" class="form-control" id="idPerson" name="idPerson" 
+                placeholder="Add Person" required #idPerson="ngModel">
+                    <option [value]="person.id" *ngFor="let person of persons;">{{person.name}}</option>
+                </select>
+                <div [hidden]="!idPerson.pristine" class="alert alert-danger">Person is required</div>
+            </div>
+            <br>
+            <button type="submit" [disabled]="!creditCardForm.form.valid"
+                class="btn btn-success float-right btn-lg">Register</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div>
+        <table class='table'>
+            <caption>Credit cards</caption>
+            <thead>
+                <tr>
+                    <th id="id">Id</th>
+                    <th id="number">Number</th>
+                    <th id="validUntil">Valid until</th>
+                    <th id="cvc">Cvc</th>
+                    <th id="idPerson">IdPerson</th>
+                    <th id="delete">Delete?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let creditCard of creditCards;">
+                    <td>{{creditCard.id}}</td>
+                    <td>{{creditCard.number}}</td>
+                    <td>{{creditCard.validUntil | date:'mediumDate'}}</td>
+                    <td>{{creditCard.cvc}}</td>
+                    <td>{{creditCard.idPerson}}</td>
+                    <td><button type="button" class="btn btn-success float-right btn-lg"
+                            (click)="deleteCreditCard(creditCard.id, creditCard.number)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

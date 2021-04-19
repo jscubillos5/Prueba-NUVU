@@ -7,11 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person/person.component';
 import { PersonService } from 'src/services/Person.service';
+import { CreditCardComponent } from './credit-card/credit-card.component';
+import { CreditCardService } from 'src/services/CreditCard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonComponent
+    PersonComponent,
+    CreditCardComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { PersonService } from 'src/services/Person.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PersonService],
+  providers: [PersonService, CreditCardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
