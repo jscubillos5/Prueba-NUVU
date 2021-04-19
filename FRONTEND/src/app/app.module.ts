@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person/person.component';
+import { PersonService } from 'src/services/Person.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { PersonComponent } from './person/person.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
